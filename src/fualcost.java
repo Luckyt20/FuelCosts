@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Main {
+public class fualcost {
 public static void main(String[] args) {
     boolean b = true;
     do {
@@ -10,17 +10,17 @@ public static void main(String[] args) {
     double fuelEfficiency = scanner.nextDouble();
     System.out.println("price of gas (in dollars per gallon): ");
     double priceOfGas = scanner.nextDouble();
+            double milesPerGallon = gasInTank * fuelEfficiency;
+            double costPerMile = priceOfGas / fuelEfficiency;
+            System.out.println("miles possible: " + milesPerGallon);
+            System.out.println("cost per mile: " + costPerMile);
+            System.out.println("Do you want to continue? (yes/no): ");
+            String answer = scanner.next();
+            if (answer.equalsIgnoreCase("no")) {
+                b = false;
+                scanner.close();
+            }
 
-    double milesPerGallon = gasInTank * fuelEfficiency;
-    double costPerMile = priceOfGas / fuelEfficiency;
-        System.out.println("miles per gallon: " + milesPerGallon);
-        System.out.println("cost per mile: " + costPerMile);
-        System.out.println("Do you want to continue? (yes/no): ");
-        String answer = scanner.next();
-        if (answer.equalsIgnoreCase("no")) {
-            b = false;
-}
-
-
-}while (b);
+        } while (b);
+    }
 }
